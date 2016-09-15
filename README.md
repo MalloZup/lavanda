@@ -30,3 +30,10 @@ In  a `hello.rb` file
 
 https://github.com/openSUSE/twopence
 
+For OpenSUSE/SUSE systems : 
+
+`zypper addrepo http://download.opensuse.org/repositories/devel:tools/openSUSE_Leap_42.1/devel:tools.repo`
+
+`zypper refresh`
+
+`zypper install twopence`
