@@ -1,11 +1,14 @@
 # Lavanda
-Lavanda is a ruby library, testing utilities builded around twopence
+Lavanda is a ruby library, testing utilities for multi-machines testing with twopence.
+The library is published in rubygem.org
+
+# Installation:
+
+* [Installing Lavanda and twopence](doc/Installation.md)
 
 
-## How install and use Lavanda:
+# HOWTO and Examples:
 
+* [Your first steps](doc/first_steps.md)
 
-## what is twopence :
-
-https://github.com/openSUSE/twopence
-
+* [Real Examples ( or where Lavanda is used)](doc/examples.md)
