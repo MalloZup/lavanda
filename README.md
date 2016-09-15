@@ -1,39 +1,14 @@
 # Lavanda
 Lavanda is a ruby library, testing utilities builded around twopence.
-
 The library is published in rubygem.org
 
+# Installation:
 
-## How install and use Lavanda:
-
-For the official version:
-`gem install Lavanda`
-
-or for the devel version: 
-
-`git clone https://github.com/MalloZup/Lavanda.git; cd Lavanda`
-`gem build Lavanda.gemspec`
-`gem install Lavanda*`
-
-## How to use Lavanda
+* [Installing Lavanda and twopence](doc/Installation.md)
 
 
-In  a `hello.rb` file
+# HOWTO and Examples:
 
-`require twopence`
-`require lavanda`
+* [Your first steps](doc/first_steps.md)
 
-
-
-
-## How to install and what is twopence :
-
-https://github.com/openSUSE/twopence
-
-For OpenSUSE/SUSE systems : 
-
-`zypper addrepo http://download.opensuse.org/repositories/devel:tools/openSUSE_Leap_42.1/devel:tools.repo`
-
-`zypper refresh`
-
-`zypper install twopence`
+* [Real Examples ( or where Lavanda is used)](doc/examples.md)
