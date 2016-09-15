@@ -6,7 +6,14 @@ The library is published in rubygem.org
 
 ## How install and use Lavanda:
 
-`gem install Lavanda.`
+For the official version:
+`gem install Lavanda`
+
+or for the devel version: 
+
+`git clone https://github.com/MalloZup/Lavanda.git; cd Lavanda`
+`gem build Lavanda.gemspec`
+`gem install Lavanda*`
 
 ## How to use Lavanda
 
