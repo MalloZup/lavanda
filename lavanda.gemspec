@@ -9,4 +9,9 @@ Gem::Specification.new do |s|
   s.files       = "lib/lavanda.rb"
   s.license     = "GPL-2.0"
   s.homepage	= "https://github.com/MalloZup/lavanda"
+  
+  s.add_development_dependency('rake')
+  s.add_development_dependency('minitest')
+  s.add_development_dependency('minitest-reporters')
+  s.add_development_dependency('rubocop')
 end
