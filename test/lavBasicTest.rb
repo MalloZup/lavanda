@@ -2,8 +2,6 @@ require_relative "../lib/lavanda.rb"
 require "twopence"
 
 class LavandaBasic_TEST 
-	# FIXME: for moment without any ci, the ip must be setted manually everytime 
-	# where the local system should run commands without pwd
 	$target_ip = "127.0.0.1"
 	
 	def logger(msg)
@@ -24,7 +22,6 @@ class LavandaBasic_TEST
 	def init_target
 		logger_test("INIT_TARGET_TEST")
 		$target = Twopence.init("ssh:#{$target_ip}")
-#		$target = Twopence::init("serial:/dev/ttyS0")
 		cmd = "whoami"
 		out, _local, _remote, code = $target.test_and_store_results_together(cmd, "test", 600)
 		puts out
