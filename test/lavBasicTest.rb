@@ -4,7 +4,7 @@ require "twopence"
 class LavandaBasic_TEST 
 	# FIXME: for moment without any ci, the ip must be setted manually everytime 
 	# where the local system should run commands without pwd
-	$target_ip = "192.168.15.116"
+	$target_ip = "127.0.0.1"
 	
 	def logger(msg)
 	  puts
@@ -24,10 +24,11 @@ class LavandaBasic_TEST
 	def init_target
 		logger_test("INIT_TARGET_TEST")
 		$target = Twopence.init("ssh:#{$target_ip}")
+#		$target = Twopence::init("serial:/dev/ttyS0")
 		cmd = "whoami"
-		out, _local, _remote, code = $target.test_and_store_results_together(cmd, "root", 600)
+		out, _local, _remote, code = $target.test_and_store_results_together(cmd, "test", 600)
 		puts out
-		if out.strip != "root" 	
+		if out.strip != "test" 	
 		  puts "OUTPUT GOT : "
 		  raise "TWOPENCE SHOULD return root as testcommand" 	
 		end

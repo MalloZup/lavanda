@@ -1,7 +1,10 @@
-.language: ruby
-rvm:
-  - 2.3.1
-  - 2.2.5
+language: bash
+
+script:
+    - bash equality_test.sh
+
+language: ruby
+
 script:
   - bundle exec rake test
   - bundle exec rubocop
