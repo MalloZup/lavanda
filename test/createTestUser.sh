@@ -2,6 +2,8 @@
 
 
 #create user 
+useradd -m "test"
+
 
 service sshd status
 if [$? -ne 0]; then service sshd start; echo "starting ssh daemon"; fi
