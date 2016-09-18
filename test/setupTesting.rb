@@ -3,10 +3,10 @@
 
 def run(cmd)
 	status = system(cmd)
-	raise "ERROR on cmd" if status == false
+	raise "#{cmd} returned non zero! FAIL" if status == false
 end
 
-run("sudo sh-keygen -t rsa")
+run("sudo ssh-keygen -t rsa")
 run("sudo cat /root/.ssh/id_rsa.pub >> /root/.ssh/authorized_keys")
 # generate ssh key 
 
