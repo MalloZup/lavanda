@@ -6,7 +6,7 @@ def run(cmd)
 	raise "#{cmd} returned non zero! FAIL" if status == false
 end
 
-run("sudo ssh-keygen -t rsa -N \"\"")
+run("sudo ssh-keygen -t rsa -N \"\" -f /root/.ssh/id_rsa")
 run("sudo cat /root/.ssh/id_rsa.pub >> /root/.ssh/authorized_keys")
 # generate ssh key 
 
