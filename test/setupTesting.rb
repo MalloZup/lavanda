@@ -12,7 +12,7 @@ puts "Autorized keys fiel created"
 # thx to tomas and metan.
 run("sudo cat /root/.ssh/id_rsa.pub | sudo tee /root/.ssh/authorized_keys")
 # generate ssh key 
-run("chmod -R 600 ~/.ssh")
+run("chmod -R 600 /root/.ssh")
 puts("testing  ssh localhost")
 run("ssh root@127.0.0.1 \"whoami\" ")
 puts("*********** SETTING UP FOR TWOPENCE DONE *********")
