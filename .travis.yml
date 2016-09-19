@@ -5,7 +5,7 @@ sudo: required
 before_install:
   - sudo apt-get -qq update
   - sudo apt-get install -y libssh-4 ruby-dev python-dev
-  - sudo apt-get install -y rake-compiler
+#  - sudo apt-get install -y rake-compiler
   - git clone https://github.com/openSUSE/twopence.git
   - cd twopence
   - make
