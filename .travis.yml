@@ -5,7 +5,7 @@ sudo: required
 before_install:
   - sudo apt-get -qq update
   - sudo apt-get install -y libssh-dev libssh-4 ruby-dev python-dev
-  - sudo apt-get install -y libssh-dbg libssh-gcrypt-4 libssh-gcrypt-dev
+  - sudo apt-get install -y libssh-dbg
   - git clone https://github.com/openSUSE/twopence.git
   - cd twopence
   - make
