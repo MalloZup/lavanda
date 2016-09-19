@@ -15,5 +15,5 @@ run("sudo cat /root/.ssh/id_rsa.pub | sudo tee /root/.ssh/authorized_keys")
 run("sudo chmod -R 600 /root/.ssh")
 
 puts("testing  ssh localhost")
-run("ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no root@127.0.0.1 \"whoami\" ")
+run("sudo ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no root@127.0.0.1 \"whoami\" ")
 puts("*********** SETTING UP FOR TWOPENCE DONE *********")
