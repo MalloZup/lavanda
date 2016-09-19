@@ -2,7 +2,7 @@ require_relative "../lib/lavanda.rb"
 require "twopence"
 
 class LavandaBasic_TEST 
-	$target_ip = "192.168.15.204"
+	$target_ip = "127.0.0.1"
 	
 	def logger(msg)
 	  puts
