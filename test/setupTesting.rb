@@ -7,6 +7,9 @@ def run(cmd)
 end
 
 run("sudo ssh-keygen -t rsa -N \"\" -f /root/.ssh/id_rsa")
+run("sudo touch /root/.ssh/authorized_keys"
+run("sudo touch ~/.ssh/authorized_keys"
+
 # thx to tomas and metan.
 run("sudo cat /root/.ssh/id_rsa.pub | sudo tee /root/.ssh/authorized_keys")
 run("sudo cat /root/.ssh/id_rsa.pub | sudo tee /~/.ssh/authorized_keys")
