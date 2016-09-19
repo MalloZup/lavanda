@@ -1,6 +1,14 @@
 language: bash
 sudo: required
 
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -y libssh-dev ruby-dev rake-compiler python-dev
+  - git clone https://github.com/openSUSE/twopence.git
+  - cd twopence
+  - make
+  - sudo make install
+  - sudo ldconfig
 script:
     - ruby test/setupTesting.rb
     - ruby test/lavBasicTest.rb
