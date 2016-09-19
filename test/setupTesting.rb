@@ -9,9 +9,10 @@ end
 run("sudo ssh-keygen -t rsa -N \"\" -f /root/.ssh/id_rsa")
 run("sudo touch /root/.ssh/authorized_keys")
 puts "Autorized keys fiel created"
-run("sudo cat /root/.ssh/id_rsa.pub > /root/.ssh/authorized_keys")
+# thx to tomas and metan.
+run("sudo cat /root/.ssh/id_rsa.pub | sudo tee /root/.ssh/authorized_keys")
 # generate ssh key 
 
-puts("test ssh localhost")
+puts("testing  ssh localhost")
 run("ssh root@127.0.0.1 \"whoami\" ")
 
