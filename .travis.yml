@@ -7,7 +7,8 @@ before_install:
   - sudo apt-get -qq update
   - sudo apt-get install -y libssh-dev ruby-dev python2.7-dev 
   - sudo apt-cache search python
-  - sudo apt-get install -y python3-dev python-dev
+  - sudo apt-get install -y python3-dev python3.4-dev libpython-dev python-dev
+  - sudo ldconfig
   - git clone https://github.com/openSUSE/twopence.git
   - cd twopence
   - make
