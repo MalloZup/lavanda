@@ -6,7 +6,7 @@ dist: trusty
 before_install:
   - sudo apt-get -qq update
   - sudo apt-get install -y libssh-dev ruby-dev python2.7-dev 
-  - sudo apt-cache policy python-dev
+  - sudo apt-get install -y python3.3-dev python-dev
   - git clone https://github.com/openSUSE/twopence.git
   - cd twopence
   - make
