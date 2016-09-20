@@ -5,13 +5,8 @@ dist: trusty
 # libssh-dev removed
 before_install:
   - sudo apt-get -qq update
-  - sudo apt-get install -y libssh-dev ruby-dev python-dev 
-  - sudo  ls /usr/include/libssh/
-  - sudo  cat /usr/include/libssh/libssh.h
-  - sudo apt-cache policy libssh-dev
-  - sudo apt-get -qq update
-  - sudo  grep -R 'ssh_event' /usr/include/libssh/libssh.h
-  
+  - sudo apt-get install -y libssh-dev ruby-dev python2.7-dev 
+  - sudo apt-cache policy python-dev
   - git clone https://github.com/openSUSE/twopence.git
   - cd twopence
   - make
