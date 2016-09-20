@@ -1,5 +1,6 @@
 language: bash
 sudo: required
+dist: trusty
 
 # libssh-dev removed
 before_install:
