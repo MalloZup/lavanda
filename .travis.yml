@@ -4,8 +4,8 @@ sudo: required
 # libssh-dev removed
 before_install:
   - sudo apt-get -qq update
-  - sudo apt-get install -y libssh-dev libssh-4 ruby-dev python-dev
-  - sudo apt-get install -y libssh-dbg
+  - sudo apt-get install -y libssh-de ruby-dev python-dev 
+  - sudo  grep -R 'ssh_event' /usr/include/libssh/
   - git clone https://github.com/openSUSE/twopence.git
   - cd twopence
   - make
