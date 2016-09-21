@@ -11,9 +11,7 @@ before_install:
   - ruby -v 
   - sudo apt-get install -y python2.7-dev
   - git clone https://github.com/openSUSE/twopence.git
-  # - git clone -b patch-1 https://github.com/MalloZup/twopence.git                                                                            
   - cd twopence
-  - git branch
   - sudo make
   - sudo make install
   - sudo ldconfig
