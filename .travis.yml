@@ -16,7 +16,7 @@ before_install:
   - sudo make install
   - sudo ldconfig
   - cd ..
-
+# seems work
 script:
     - ruby test/setupTesting.rb
     - ruby test/lavBasicTest.rb
