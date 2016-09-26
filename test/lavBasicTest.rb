@@ -1,8 +1,12 @@
-require_relative "../lib/lavanda.rb"
+#! /usr/bin/ruby
+
 require "twopence"
+require "lavanda"
+
+
+## actual tests, (basics).
 
 class LavandaBasic_TEST 
-	$target_ip = "127.0.0.1"
 	
 	def logger(msg)
 	  puts
@@ -21,12 +25,12 @@ class LavandaBasic_TEST
 	# note that the ssh key has to be copied
 	def init_target
 		logger_test("INIT_TARGET_TEST")
-		$target = Twopence.init("ssh:#{$target_ip}")
+		$target = Twopence.init("ssh:127.0.0.1")
 		cmd = "whoami"
-		out, _local, _remote, code = $target.test_and_store_results_together(cmd, "test", 600)
+		out, _local, _remote, code = $target.test_and_store_results_together(cmd, "root", 600)
 		puts out
-		if out.strip != "test" 	
-		  puts "OUTPUT GOT : "
+		if out.strip != "root" 	
+		  puts "OUTPUT GOT : #{out}#" 
 		  raise "TWOPENCE SHOULD return root as testcommand" 	
 		end
                 logger("TWOPENCE TARGET SUCCESSEFULLY INITIALIZED, and WHOAMI_CMD OK!")
@@ -34,7 +38,7 @@ class LavandaBasic_TEST
 
 	# test the run function
 	def run_cmd()
-		 $target.extend(LAVANDA_BASIC)
+		 $target.extend(LavandaBasic)
 		 logger_test("TEST_LAVANDA_BASICS: RUN_CMD")
 		 out, code, empty = $target.run("whoami")
 		 puts out + "code " + code.to_s
@@ -43,19 +47,22 @@ class LavandaBasic_TEST
 		 logger("LAVANDA_BASIC MODULE : RUN test OK!")                 
 	end
 
-	def run_cmd_other()
-	#        def run(cmd, user = "root" , timeout = 100)
-		 out, code = $target.run("whoami", "testuser")
-		 puts out
-		 raise "code should be 0" if code != 0
-		 raise "should return testuser" if out.strip != "testuser"
-		 logger_test("testing timeout")
-		 out, code = $target.run("sleep 500", "root", 5)
-	end
+        def run_basic()
+        #        def run(cmd, user = "root" , timeout = 100)
+                 out, code = $target.run("whoami", true)
+                 raise "code should be 0" if code != 0
+                 raise "should return testuser" if out.strip != "root"
+                 logger_test("testing timeout")
+                 out, code = $target.run("sleep 500", "root", 5)
+		 puts "timeout from 500 killed with 5 seconds"
+        end
+
+
 
 end
-
+# MAIN **************
 test = LavandaBasic_TEST.new
 test.init_target()
 test.run_cmd()
-test.run_cmd_other()
+test.run_basic()
+
